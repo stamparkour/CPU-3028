@@ -1,11 +1,12 @@
 # CPU3026 Project
 
-The CPU3026 is an emulated custom 16 bit cpu made for the class Introduction to Software Engineering.
+The CPU3026 is an emulated custom 16 bit cpu made for the class, Introduction to Software Engineering.
 
 ### Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
+	- [Configuring](#configuring)
 	- [Testing](#testing)
 	- [Python Bindings](#python-bindings)
 - [Usage](#usage)
