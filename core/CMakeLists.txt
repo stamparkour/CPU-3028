@@ -17,7 +17,6 @@ target_compile_features(core PRIVATE cxx_std_23)
 target_include_directories(core 
 	PUBLIC "include" 
 	PUBLIC "${cpu3026_BINARY_DIR}/core/include" 
-	PRIVATE "./"
 )
 
 # dependencies
