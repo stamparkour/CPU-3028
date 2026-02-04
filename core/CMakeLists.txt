@@ -9,12 +9,12 @@ set(PROJECT_HEADERS
 )
 
 # add the library
-add_library(core STATIC ${PROJECT_SOURCES} ${PROJECT_HEADERS})
-add_library(cpu3026::core ALIAS core)
-target_compile_features(core PRIVATE cxx_std_23)
+add_library(cpu3026_core STATIC ${PROJECT_SOURCES} ${PROJECT_HEADERS})
+add_library(cpu3026::core ALIAS cpu3026_core)
+target_compile_features(cpu3026_core PRIVATE cxx_std_23)
 
 # adds a directory to search when finding header files
-target_include_directories(core 
+target_include_directories(cpu3026_core 
 	PUBLIC "include" 
 	PUBLIC "${cpu3026_BINARY_DIR}/core/include" 
 )

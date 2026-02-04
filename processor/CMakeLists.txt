@@ -9,13 +9,13 @@ set(PROJECT_HEADERS
 )
 
 # add the library
-add_library(processor STATIC ${PROJECT_SOURCES} ${PROJECT_HEADERS})
-add_library(cpu3026::processor ALIAS processor)
-target_compile_features(processor PRIVATE cxx_std_23)
-target_link_libraries(processor PUBLIC cpu3026::core)
+add_library(cpu3026_processor STATIC ${PROJECT_SOURCES} ${PROJECT_HEADERS})
+add_library(cpu3026::processor ALIAS cpu3026_processor)
+target_compile_features(cpu3026_processor PRIVATE cxx_std_23)
+target_link_libraries(cpu3026_processor PUBLIC cpu3026::core)
 
 # adds a directory to search when finding header files
-target_include_directories(processor 
+target_include_directories(cpu3026_processor 
 	PUBLIC "include" 
 	PUBLIC "${cpu3026_BINARY_DIR}/core/include"
 )

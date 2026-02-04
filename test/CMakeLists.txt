@@ -9,17 +9,17 @@ set(PROJECT_HEADERS
 )
 
 # add the executable
-add_executable(test ${PROJECT_SOURCES} ${PROJECT_HEADERS})
-target_compile_features(test PRIVATE cxx_std_23)
-target_link_libraries(cmd cpu3026::cpu3026)
+add_executable(cpu3026_test ${PROJECT_SOURCES} ${PROJECT_HEADERS})
+target_compile_features(cpu3026_test PRIVATE cxx_std_23)
+target_link_libraries(cpu3026_test cpu3026::cpu3026)
 
 # dependencies
 set(BUILD_SHARED_LIBS ON)
 
 include(gtest)
-target_link_libraries(test GTest::gtest_main)
+target_link_libraries(cpu3026_test GTest::gtest_main)
 
 
 #google test required lines
 include(GoogleTest)
-gtest_discover_tests(test)
+gtest_discover_tests(cpu3026_test)
