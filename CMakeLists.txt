@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.16)
 project(cpu3026 VERSION 0.1.0 LANGUAGES C CXX)
 
 #options
-option(CPU3026_PYBIND "generate pybind library" ON)
+option(CPU3026_PYBIND "generate pybind library" OFF)
 
 
 #config
@@ -23,8 +23,10 @@ target_link_libraries(cpu3026 INTERFACE cpu3026::core cpu3026::memory cpu3026::p
 #add executables
 add_subdirectory(cmd)
 add_subdirectory(test)
-add_subdirectory(cpu3026_py)
-add_subdirectory(python)
+if(CPU3026_PYBIND)
+    add_subdirectory(cpu3026_py)
+    add_subdirectory(python)
+endif()
 
 #project warnings
 if (MSVC)

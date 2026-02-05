@@ -2,6 +2,7 @@ set(PROJECT_SOURCES
 	"main.py"
 )
 
+include(python)
 
 if(WIN32)
     configure_file(
@@ -36,4 +37,7 @@ else() # linux
         SOURCES ${PROJECT_SOURCES}
     )
 endif()
-add_dependencies(cpu3026_python cpu3026_py)
+
+if(Python_FOUND) 
+    add_dependencies(cpu3026_python cpu3026_py)
+endif()
