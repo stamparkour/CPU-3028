@@ -11,9 +11,9 @@ option(CPU3026_PYBIND "generate pybind library" OFF)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # include libraries
-add_subdirectory(core)
-add_subdirectory(memory)
-add_subdirectory(processor)
+add_subdirectory(lib/core)
+add_subdirectory(lib/memory)
+add_subdirectory(lib/processor)
 
 # add global library
 add_library(cpu3026 INTERFACE)
@@ -21,11 +21,11 @@ add_library(cpu3026::cpu3026 ALIAS cpu3026)
 target_link_libraries(cpu3026 INTERFACE cpu3026::core cpu3026::memory cpu3026::processor)
 
 #add executables
-add_subdirectory(cmd)
+add_subdirectory(app/cmd)
 add_subdirectory(test)
 if(CPU3026_PYBIND)
-    add_subdirectory(cpu3026_py)
-    add_subdirectory(python)
+    add_subdirectory(lib/cpu3026_py)
+    add_subdirectory(app/python)
 endif()
 
 #project warnings
