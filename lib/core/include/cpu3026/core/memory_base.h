@@ -11,7 +11,6 @@ namespace cpu3026 {
 		virtual word_t do_readw(address_t address) const;
 		virtual void do_writew(address_t address, word_t value);
 	public:
-		virtual ~memory_base() = 0;
 		/// @brief reads cpu3026::byte_t from memory at address
 		/// @param address place to read from memory
 		/// @return byte at address
@@ -33,7 +32,7 @@ namespace cpu3026 {
 	//definitions
 
 	inline word_t cpu3026::memory_base::do_readw(address_t address) const {
-		return static_cast<word_t>(do_readb(address) | (do_readb(address) << 8));
+		return static_cast<word_t>(do_readb(address) | (do_readb(address+1) << 8));
 	}
 	inline void cpu3026::memory_base::do_writew(address_t address, word_t value) {
 		do_writeb(address, static_cast<byte_t>(value & 0xFF));

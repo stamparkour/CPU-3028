@@ -8,7 +8,6 @@ namespace cpu3026 {
 		virtual void do_step() = 0;
 		virtual void do_interrupt(word_t interrupt) = 0;
 	public:
-		virtual ~processor_base() = 0;
 		/// @brief resets the processor to the default state
 		void reset();
 		/// @brief runs count steps in the processor
